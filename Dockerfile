@@ -3,8 +3,11 @@ FROM maven:latest
 WORKDIR /app
 
 COPY pom.xml /app/
+
 COPY . /app/
 
-RUN mvn clean package
+RUN mvn package
 
-CMD ["java", "-jar", "target/test.jar"]
+cmd ["java", "-jar", "target/test.jar"]
+
+
