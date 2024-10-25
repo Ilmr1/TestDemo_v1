@@ -43,5 +43,12 @@ public class LocalizedGreetingTest {
         ResourceBundle messages = ResourceBundle.getBundle("Messages", locale);
         assertEquals("Hello!", messages.getString("greeting"));
     }
-}
 
+    @Test
+    public void testFarsiGreeting() {
+        Locale locale = new Locale("fa", "IR");
+        ResourceBundle messages = ResourceBundle.getBundle("Messages", locale);
+        String greeting = messages.getString("greeting");
+        assertEquals("سلام! به برنامه ما خوش آمدید", greeting);
+    }
+}
